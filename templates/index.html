@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Management</title>
+        <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="page-title">Student Management System</h1>
+            <div class="card">
+                <div class="top-bar">
+                <h2>Students List</h2>
+                <a href="/add" class="btn btn-success">Add Student</a>
+                </div>
+
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Action</th>
+                    </tr>
+                    {% for abc in students %}
+                    <tr>
+                        <td>{{ abc[0] }}</td>
+                        <td>{{ abc[1] }}</td>
+                        <td>{{ abc[2] }}</td>
+                        <td>{{ abc[3] }}</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="/edit/{{ abc[0] }}"class="btn btn-warning">Edit</a>
+                                <a href="/delete/{{ abc[0] }}" class="btn btn-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+
+            </div>
+        </div>
+    </body>
+</html>
+
