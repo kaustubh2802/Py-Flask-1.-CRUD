@@ -96,6 +96,13 @@ def add_student():
 
         conn.close()
 
+
+        
+        flash(
+            "Student Added Successfully",
+            "success"
+        )
+
         return redirect("/")
 
     return render_template(
@@ -120,6 +127,10 @@ def delete_student(id):
     conn.commit()
 
     conn.close()
+    flash(
+    "Student Deleted Successfully",
+    "success"
+)
 
     return redirect("/")
 
@@ -160,6 +171,7 @@ def edit_student(id):
         conn.commit()
 
         conn.close()
+        flash( "Student Updated Successfully", "success"  )
 
         return redirect("/")
 

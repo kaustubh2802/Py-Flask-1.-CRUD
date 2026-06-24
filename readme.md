@@ -4,6 +4,7 @@
     and run this commands: 
     1.1. pip install flask
     1.2. pip install mysql-connector-python
+    1.3. pip install werkzeug
 4. run xampp apache
 5. open browser:  localhost/phpmyadmin = click = new 
 6. create database: student_db. = click create.
